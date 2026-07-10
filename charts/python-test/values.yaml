@@ -63,14 +63,14 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
   hosts:
-    - host: argocd.example.com
+    - host: python-test.example.com
       paths:
         - path: /api/v1
           pathType: Prefix
   tls:
-    - secretName: argocd-server-tls
+    - secretName: python-test-tls
       hosts:
-        - argocd.example.com
+        - python-test.example.com
 
 # -- Expose the service via gateway-api HTTPRoute
 # Requires Gateway API resources and suitable controller installed within the cluster
