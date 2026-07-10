@@ -20,8 +20,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       -
+        name: Compute short SHA
+        id: vars
+        run: echo "short_sha=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+
+      -
         name: Build and push
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: asherif310/python-test:${{ github.sha }}
+          tags: asherif310/python-test:${{ steps.vars.outputs.short_sha }}
