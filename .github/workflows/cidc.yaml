@@ -75,4 +75,4 @@ jobs:
 
       - name: argocd app sync
         run: |
-          argocd app sync python-test --grpc-web --insecure --auth-token ${{ secrets.ARGOCD_AUTH_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }} --wait --timeout 120
+          argocd app sync python-test --grpc-web --insecure --auth-token ${{ secrets.ARGOCD_AUTH_TOKEN }} --server ${{ secrets.ARGOCD_SERVER }}
