@@ -64,7 +64,7 @@ jobs:
 
   cd:
     needs: update-manifest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Install ArgoCD CLI
         env:
